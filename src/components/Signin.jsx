@@ -1,10 +1,15 @@
 import { Admin } from "./Admin"
+import { useState } from 'react';
 
 export const Signin = (props) => {
+    const { setSignin } = props
+
+
+
     return (
         <>
-            <h1>sign in</h1>
-            <Admin />
+
+            <Admin setSignin={setSignin} />
 
         </>
     )
