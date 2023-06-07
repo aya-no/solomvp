@@ -1,12 +1,17 @@
 // import logo from './logo.svg';
 import './App.css';
+import { Choose } from './components/Choose'
+import { Signin } from './components/Signin'
+
 
 function App() {
+
   return (
-    <div className="App">
-
-
-    </div>
+    <>
+      <h1>Choose your favorite coffee</h1>
+      <Choose />
+      <Signin />
+    </>
   );
 }
 
