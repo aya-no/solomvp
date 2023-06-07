@@ -16,7 +16,7 @@ exports.up = function (knex) {
         table.string("about", 1000).notNullable();
         table.string("yen", 64).notNullable();
         table.string("img").notNullable();
-        table.string("url").notNullable().unique();
+        table.string("url").notNullable();
         table.float("score").notNullable()
     });
 };

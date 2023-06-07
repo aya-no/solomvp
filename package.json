@@ -21,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:api": "nodemon src/server.js",
-    "migrate": "cd ./db & knex migrate:latest"
+    "migrate": "cd ./db & knex migrate:latest",
+    "seed": "cd ./db & knex seed:run"
   },
   "eslintConfig": {
     "extends": [
