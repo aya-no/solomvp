@@ -1,128 +1,59 @@
-# soroMVP-Choose-your-favorite-coffee
+# Choose your favorite coffee
 
-**This was created during my time as a student at [Code Chrysalis](https://www.codechrysalis.io/).**
+![image](https://github.com/)
 
-# Site clip for your Coffee Time ☕
 
-You can check out the app on [Heroku](https://coffeee-time.herokuapp.com/)!
-
-![image](https://github.com/nouvelle/coffee-time/blob/master/images/desktop.png?raw=true)
-![image](https://github.com/nouvelle/coffee-time/blob/master/images/smartphone.png?raw=true)
-
-- [soroMVP-Choose-your-favorite-coffee](#soromvp-choose-your-favorite-coffee)
-- [Site clip for your Coffee Time ☕](#site-clip-for-your-coffee-time-)
-- [About](#about)
-- [Development](#development)
-  - [Database](#database)
-- [Other command](#other-command)
-- [Technology used](#technology-used)
-- [Future features](#future-features)
-- [Contributing](#contributing)
-- [License](#license)
 
 # About
 
-If you use this app, you can save the URLs you want to read later and read them together later.  
-You can save what you have read, so you can read it immediately if you want to read it again.
+このアプリは、苦味や甘味、酸味などの好みを指定すると、それに合わせたおすすめのコーヒー豆をレコメンドしてくれるアプリです。
+管理画面では、コーヒー豆の編集も可能です。
 
 # Development
 
-Follow this guide to set up your environment etc.
+利用には環境設定が必要です。
 
-## Database
+**データベース**
 
-This project assumes a Postgres database, naturally, this is not included in the package.json file, so must be installed separately.
+PostgresSQLにて、「beans」というデータベースを作成します。
 
-If you are on Windows using WSL, [this blogpost](https://medium.com/@harshityadav95/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3) is very helpful.
 
-Create a database called `coffeetime`.
+**設定手順**
 
-Create a `.config.js` file in the project root with this format:
-
-```
-module.exports = {
-  db: {
-    client: "postgresql",
-    connection: process.env.DATABASE_URL || {
-      host: process.env.DB_HOST || "127.0.0.1",
-      port: process.env.DB_PORT || 5432,
-      database: process.env.DB_NAME || "coffeetime",
-      user: "exampleUsername", // <= Your command line username
-      password: "examplePassword", // <= Your command line
-    }
-  },
-};
-
-```
-
-To clone and run this application, you'll need Git and Node.js (which comes with yarn) installed on your computer.  
-From your command line:
-
-**Downloading and installing steps**
-
-1. Clone this repository
-
+1.このリポジトリをクローン
+2.依存関係をインストール
 ```bash
-$ git clone https://github.com/nouvelle/coffee-time.git
+$ npm i
 ```
-
-2. Go into the repository
-
+3.データベースの作成
 ```bash
-$ cd coffee-time
+$ npm run migrate
+$ npm run seed
 ```
-
-3. Install dependencies
-
+4.アプリを実行
 ```bash
-$ yarn
-```
-
-4. Create database, Run migrations and set up the database
-
-```bash
-$ yarn migrate
-```
-
-5. Run the app
-
-```bash
-$ yarn start
-```
-
-# Other command
-
-- To roll back migrations
-
-```bash
-$ yarn rollback
-```
-
-- To insert test data
-
-```bash
-$ yarn seed
+$ npm run start
+$ npm run start:api
 ```
 
 # Technology used
 
-This software uses the following open source packages:
-![image](https://github.com/nouvelle/coffee-time/blob/master/images/technology.png?raw=true)
+<div>
+<img src="https://img.shields.io/badge/-Git-F05032.svg?logo=git&style=plastic">
+<img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic">
+<img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic">
+<img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic">
+<img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic">
+<img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=plastic">
+<img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=plastic">
+<img src="https://img.shields.io/badge/-Nodemon-76D04B.svg?logo=nodemon&style=plastic">
+Render
+</div>
+
+<br />
 
 # Future features
 
-For now, you can see the site clip data.  
-I will be adding more function.
+- [ ] AWS EC2インスタンスへのデプロイ
+- [ ] 管理画面のユーザー認証
 
-- [x] Save added data and read information into database.
-- [ ] Show the history of your reading.
-- [ ] Login function.
-- [ ] Interactive animations.
-
-# Contributing
-
-Pull requests are welcome!! 😊
-
-# License
-
-[MIT](https://choosealicense.com/licenses/mit/)
