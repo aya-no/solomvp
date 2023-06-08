@@ -45,7 +45,7 @@ function App() {
           <>
             <Choose selectFav={selectFav} setSelectFav={setSelectFav} recommendBeans={recommendBeans} />
             <footer>
-              <button className="sigininBtn" onClick={() => setSignin(true)}>管理者画面へ</button>
+              <button className="sigininBtn" onClick={() => setSignin(true)}>Administration</button>
             </footer>
           </>
         }

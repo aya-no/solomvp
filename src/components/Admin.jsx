@@ -29,7 +29,6 @@ export const Admin = (props) => {
     };
 
     const inputBeans = (e) => {
-        console.log("changeBeans_e:", e)
         setInputBeansText({
             id: Number(e.target.className),
             [e.target.id]: e.target.value

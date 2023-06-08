@@ -7,7 +7,7 @@ export const Recommend = (props) => {
 
     return (
         <>
-            <h2>おすすめのお豆はこちら</h2>
+            <h2>おすすめコーヒー豆</h2>
 
             <table className="ranking">
                 <tbody>
