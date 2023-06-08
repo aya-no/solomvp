@@ -7,7 +7,8 @@ import axios from 'axios';
 
 
 function App() {
-  const url = "http://localhost:8080";
+  // const url = "http://localhost:8080";
+  const url = "https://solomvp-api.onrender.com";
   const [selectFav, setSelectFav] = useState({
     bitterness: 3,
     acidity: 3,
