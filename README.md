@@ -38,7 +38,7 @@ $ npm run start:api
 
 # Technology used
 
-![image](https://github.com/)
+![image](https://github.com/aya-no/solomvp/blob/main/readmeimg/001.png)
 
 <br />
 
