@@ -36,7 +36,7 @@ function App() {
   return (
     <>
       <h1>Choose your favorite coffee</h1>
-      {signin ? <Signin setSignin={setSignin} /> :
+      {signin ? <Signin setSignin={setSignin} url={url} /> :
         <>
           <Choose selectFav={selectFav} setSelectFav={setSelectFav} recommendBeans={recommendBeans} />
           <button className="sigininBtn" onClick={() => setSignin(true)}>管理者画面へ</button>

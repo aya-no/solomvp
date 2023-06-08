@@ -18,9 +18,9 @@ app.use(express.json());
 
 // コーヒー豆を全て返す
 app.get("/allbeans", async (req, res) => {
-    const beans = await knex("beans").select("*");
+    const beans = await knex("beans").select("*").orderBy("id", "asc");
     res.send(beans)
-})
+});
 
 // 選択した好みに近いコーヒー豆を３つ返す
 // 想定req
@@ -49,7 +49,6 @@ app.get("/recommendbeans", async (req, res) => {
 
 // コーヒー豆を修正する
 // 想定req
-// [
 //     {
 //       "id": 14,
 //       "name": "ブラジル・ショコラ",
@@ -62,31 +61,25 @@ app.get("/recommendbeans", async (req, res) => {
 //       "yen": "税込 1,620円/200g",
 //       "url": "http://umapanera.com/?pid=133804987"
 //   }
-// ]
 app.put("/updatebeans", async (req, res) => {
     try {
-        await req.body.map(async (data) => {
-            await knex("beans")
-                .where({ id: data.id })
-                .update({
-                    name: data.name,
-                    bitterness: data.bitterness,
-                    acidity: data.acidity,
-                    sweets: data.sweets,
-                    richbody: data.richbody,
-                    flavor: data.flavor,
-                    about: data.about,
-                    yen: data.yen,
-                    img: data.img,
-                    url: data.url
-                })
-        })
-        res.send("コーヒー豆修正完了")
+        let keyname = Object.keys(req.body)[1]
+        console.log(keyname)
+        const updateData = {
+            [keyname]: req.body[keyname]
+        };
+        console.log(updateData)
+        await knex("beans")
+            .where({ id: req.body.id })
+            .update(updateData);
+        res.send("コーヒー豆修正完了");
     } catch (err) {
-        console.error(err);
-        res.status(500);
-    };
-})
+        // console.error(err);
+        // res.status(500).send(err.message);
+    }
+});
+
+
 
 // コーヒー豆を追加する
 //     {
