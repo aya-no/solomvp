@@ -1,8 +1,23 @@
 import { useState, useEffect } from "react"
 import axios from 'axios';
 import { AiFillDelete } from "react-icons/ai";
+import { auth } from '../firebase';
+// import { useAuthContext } from '../context/AuthContext';
 
 export const Admin = (props) => {
+
+
+    // ユーザー登録用
+    // const { user } = useAuthContext();
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const { email, password } = event.target.elements;
+        console.log(email.value, password.value);
+        auth.createUserWithEmailAndPassword(email.value, password.value);
+    };
+
 
     const { setSignin, url } = props
     const [allbeans, setAllbeans] = useState([]);
@@ -41,7 +56,7 @@ export const Admin = (props) => {
 
     return (
         <>
-            <h2>管理者画面</h2>
+            <h2>コーヒー豆管理画面</h2>
 
             <table className="allbeansList">
                 <thead>
@@ -106,9 +121,27 @@ export const Admin = (props) => {
                 </tbody>
             </table>
 
+            <div>
+                <h2>管理者ユーザ登録</h2>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>メールアドレス</label>
+                        <input name="email" type="email" placeholder="email" />
+                    </div>
+                    <div>
+                        <label>パスワード</label>
+                        <input name="password" type="password" />
+                    </div>
+                    <div>
+                        <button>登録</button>
+                    </div>
+                </form>
+            </div>
 
 
-            <button className="recommendBtn" onClick={() => setSignin(false)}>戻る</button>
+
+
+            <button className="recommendBtn" onClick={() => { auth.signOut(); setSignin(false); }}>ログアウトして戻る</button>
 
         </>
     )

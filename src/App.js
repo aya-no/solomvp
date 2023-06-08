@@ -4,11 +4,12 @@ import { Choose } from './components/Choose';
 import { Signin } from './components/Signin';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
-  // const url = "http://localhost:8080";
-  const url = "https://solomvp-api.onrender.com";
+  const url = process.env.DATABASE_URL ? "https://solomvp-api.onrender.com" : "http://localhost:8080";
+  // const url = "https://solomvp-api.onrender.com";
   const [selectFav, setSelectFav] = useState({
     bitterness: 3,
     acidity: 3,
@@ -36,13 +37,19 @@ function App() {
 
   return (
     <>
-      <h1>Choose your favorite coffee</h1>
-      {signin ? <Signin setSignin={setSignin} url={url} /> :
-        <>
-          <Choose selectFav={selectFav} setSelectFav={setSelectFav} recommendBeans={recommendBeans} />
-          <button className="sigininBtn" onClick={() => setSignin(true)}>管理者画面へ</button>
-        </>
-      }
+      <AuthProvider>
+        <header>
+          <h1>Choose your favorite coffee</h1>
+        </header>
+        {signin ? <Signin setSignin={setSignin} url={url} /> :
+          <>
+            <Choose selectFav={selectFav} setSelectFav={setSelectFav} recommendBeans={recommendBeans} />
+            <footer>
+              <button className="sigininBtn" onClick={() => setSignin(true)}>管理者画面へ</button>
+            </footer>
+          </>
+        }
+      </AuthProvider>
 
     </>
   );

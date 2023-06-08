@@ -16,27 +16,27 @@ export const Choose = (props) => {
         <>
             {recommendation ? <Recommend setRecommendation={setRecommendation} recommendBeans={recommendBeans} /> :
                 <>
-                    <h2>あなたのお好みは？</h2>
+                    <h2>Please let me know your preference</h2>
 
                     <div className="range">
-                        <label>苦味</label>
+                        <label>Bitterness</label>
                         <input type="range" id="bitterness" value={selectFav.bitterness} onChange={changeSelect} min="1" max="5" step="0.2"></input>
                     </div>
                     <div className="range">
-                        <label>酸味</label>
+                        <label>Acidity</label>
                         <input type="range" id="acidity" value={selectFav.acidity} onChange={changeSelect} min="1" max="5" step="0.2"></input>
 
                     </div>
                     <div className="range">
-                        <label>甘味</label>
+                        <label>Sweets</label>
                         <input type="range" id="sweets" value={selectFav.sweets} onChange={changeSelect} min="1" max="5" step="0.2"></input>
                     </div>
                     <div className="range">
-                        <label>コク</label>
+                        <label>Richbody</label>
                         <input type="range" id="richbody" value={selectFav.richbody} onChange={changeSelect} min="1" max="5" step="0.2"></input>
                     </div>
                     <div className="range">
-                        <label>香り</label>
+                        <label>Flavor</label>
                         <input type="range" id="flavor" value={selectFav.flavor} onChange={changeSelect} min="1" max="5" step="0.2"></input>
                     </div>
 
