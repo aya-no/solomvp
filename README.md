@@ -6,7 +6,7 @@
 
 # About
 
-このアプリは、苦味や甘味、酸味などの好みを指定すると、それに合わせたおすすめのコーヒー豆をレコメンドしてくれるアプリです。
+このアプリは、苦味や甘味、酸味などの好みを指定すると、それに合わせたおすすめのコーヒー豆をレコメンドします。
 管理画面では、コーヒー豆の編集も可能です。
 
 # Development
@@ -20,16 +20,31 @@ PostgresSQLにて、「beans」というデータベースを作成します。
 
 **設定手順**
 
-1.このリポジトリをクローン
-2.依存関係をインストール
+1.このリポジトリをクローンし、依存関係をインストール
 ```bash
 $ npm i
 ```
-3.データベースの作成
+2.データベースの作成
 ```bash
 $ npm run migrate
 $ npm run seed
 ```
+3.FirebaseのAuthoneticationを利用するため、アカウント登録
+https://firebase.google.com/?hl=ja
+
+4.プロバイダはメール/パスワードのみを有効
+
+5.SDKを追加するため、ルートフォルダ直下に「.env.local」ファイルを作成し、取得した値を設定する（XXXを書き換える）
+```bash
+REACT_APP_FIREBASE_API_KEY="XXX"
+REACT_APP_FIREBASE_AUTH_DOMAIN="XXX"
+REACT_APP_FIREBASE_PROJECT_ID="XXX"
+REACT_APP_FIREBASE_STORAGE_BUCKET="XXX"
+REACT_APP_FIREBASE_MESSAGE_SENDER_ID="XXX"
+REACT_APP_FIREBASE_APP_ID="XXX"
+```
+
+
 4.アプリを実行
 ```bash
 $ npm run start
