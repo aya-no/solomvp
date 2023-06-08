@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from 'axios';
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { AiFillDelete } from "react-icons/ai";
 
 export const Admin = (props) => {
 
@@ -101,7 +101,7 @@ export const Admin = (props) => {
                                     <button><AiFillDelete /></button>
                                 </tb>
                             </tr>
-                        )
+                        );
                     })}
                 </tbody>
             </table>
