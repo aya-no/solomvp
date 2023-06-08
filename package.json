@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:api": "npm i && npm run migrate && npm run seed",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:api": "nodemon src/server.js",
