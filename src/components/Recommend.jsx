@@ -41,8 +41,10 @@ export const Recommend = (props) => {
                 </tbody>
             </table>
 
+            <div className="returnBtn">
 
-            <button className="recommendBtn" onClick={() => setRecommendation(false)}>one more</button>
+                <button onClick={() => setRecommendation(false)}>one more</button>
+            </div>
         </>
     )
 }

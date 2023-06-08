@@ -122,25 +122,26 @@ export const Admin = (props) => {
 
             <div>
                 <h2>管理者ユーザ登録</h2>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="loginForm">
                     <div>
-                        <label>メールアドレス</label>
+                        <label>email</label>
                         <input name="email" type="email" placeholder="email" />
                     </div>
                     <div>
-                        <label>パスワード</label>
-                        <input name="password" type="password" />
+                        <label>password</label>
+                        <input name="password" type="password" placeholder="password" />
                     </div>
-                    <div>
+                    <div className="signinBtnDiv">
                         <button>登録</button>
                     </div>
                 </form>
             </div>
 
+            <div className="returnBtn">
+                <button onClick={() => { auth.signOut(); setSignin(false); }}>ログアウト</button>
 
+            </div>
 
-
-            <button className="recommendBtn" onClick={() => { auth.signOut(); setSignin(false); }}>ログアウトして戻る</button>
 
         </>
     )

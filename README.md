@@ -1,6 +1,6 @@
 # Choose your favorite coffee
 
-![image](https://github.com/)
+![image](https://github.com/aya-no/solomvp/blob/main/readmeimg/002.png)
 
 
 

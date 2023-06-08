@@ -17,26 +17,27 @@ export const Signin = (props) => {
     return (
         <>
             {(user) ? <Admin setSignin={setSignin} url={url} /> :
-                <div>
-                    <h2>ログイン</h2>
-                    <form onSubmit={handleSubmit}>
+                <>
+                    <h2>コーヒー豆管理画面</h2>
+                    <form onSubmit={handleSubmit} className="loginForm" >
                         <div>
-                            <label>メールアドレス</label>
+                            <label>email</label>
                             <input name="email" type="email" placeholder="email" />
                         </div>
                         <div>
-                            <label>パスワード</label>
+                            <label>password</label>
                             <input name="password" type="password" placeholder="password" />
                         </div>
-                        <div>
-                            <button>ログイン</button>
+                        <div className="signinBtnDiv">
+                            <button>login</button>
                         </div>
                     </form>
-                    <button className="recommendBtn" onClick={() => setSignin(false)}>戻る</button>
-                </div>
+                    <div className="returnBtn">
+                        <button onClick={() => setSignin(false)}>戻る</button>
+                    </div>
+                </>
 
             }
-
         </>
 
 
