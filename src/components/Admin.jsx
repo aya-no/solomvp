@@ -12,6 +12,9 @@ export const Admin = (props) => {
         const { email, password } = event.target.elements;
         // console.log(email.value, password.value);
         auth.createUserWithEmailAndPassword(email.value, password.value);
+        window.alert("管理者ユーザーを登録しました")
+        document.loginform.reset()
+
     };
 
 
@@ -118,7 +121,7 @@ export const Admin = (props) => {
 
             <div>
                 <h2>管理者ユーザ登録</h2>
-                <form onSubmit={handleSubmit} className="loginForm">
+                <form onSubmit={handleSubmit} className="loginForm" name="loginform">
                     <div>
                         <label>email</label>
                         <input name="email" type="email" placeholder="email" />
