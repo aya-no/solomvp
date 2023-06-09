@@ -20,7 +20,7 @@ export const Choose = (props) => {
                     <main>
                         <h2>Please let me know your preference</h2>
 
-                        <div className="rangeList">
+                        <div className="rangeList" id="rangeList">
 
                             <div className="range">
                                 <label> Bitterness</label>
@@ -45,7 +45,7 @@ export const Choose = (props) => {
 
                         </div>
                         <div className="recommendBtnDiv">
-                            <button className="recommendBtn" onClick={() => setRecommendation(true)}>SEARCH</button>
+                            <button id="search" className="recommendBtn" onClick={() => setRecommendation(true)}>SEARCH</button>
                         </div>
                     </main>
                     <footer>
