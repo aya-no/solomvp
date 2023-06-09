@@ -2,19 +2,15 @@ import { useState, useEffect } from "react"
 import axios from 'axios';
 import { AiFillDelete } from "react-icons/ai";
 import { auth } from '../firebase';
-// import { useAuthContext } from '../context/AuthContext';
 
 export const Admin = (props) => {
 
 
     // ユーザー登録用
-    // const { user } = useAuthContext();
-
-
     const handleSubmit = (event) => {
         event.preventDefault();
         const { email, password } = event.target.elements;
-        console.log(email.value, password.value);
+        // console.log(email.value, password.value);
         auth.createUserWithEmailAndPassword(email.value, password.value);
     };
 

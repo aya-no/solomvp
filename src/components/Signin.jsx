@@ -15,7 +15,7 @@ export const Signin = (props) => {
     };
 
     return (
-        <>
+        <main>
             {(user) ? <Admin setSignin={setSignin} url={url} /> :
                 <>
                     <h2>コーヒー豆管理画面</h2>
@@ -38,7 +38,7 @@ export const Signin = (props) => {
                 </>
 
             }
-        </>
+        </main>
 
 
 

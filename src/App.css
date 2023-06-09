@@ -1,7 +1,3 @@
-html {
-  height: 100%;
-}
-
 body {
   background-image: url("../public/img/background.jpg");
   background-repeat: repeat-y;
@@ -9,7 +5,26 @@ body {
   background-attachment: fixed;
   background-position: right top;
   background-color: #6e6457;
-  height: 100%;
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Kiwi Maru', serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #a2997f;
+  text-align: center;
 }
 
 #id {
@@ -19,7 +34,7 @@ body {
 h1 {
   color: #cfdedf;
   text-align: center;
-  margin-top: 1em;
+  /* margin-top: 1em; */
 }
 
 h2 {
@@ -28,15 +43,6 @@ h2 {
   margin-top: 30px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: #a2997f;
-  text-align: center;
-}
 
 .rangeList {
   margin-top: 40px;
@@ -75,6 +81,8 @@ footer {
   width: 100px;
   height: 100px;
   padding: 0;
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Kiwi Maru', serif;
 }
 
 .recommendBtn:hover {
@@ -87,6 +95,8 @@ footer {
   border: none;
   background: transparent;
   margin-top: 15px;
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Kiwi Maru', serif;
 }
 
 .sigininBtn:hover {
@@ -138,8 +148,50 @@ footer {
 .returnBtn button {
   color: #cfdedf;
   background: transparent;
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Kiwi Maru', serif;
 }
 
 .returnBtn button:hover {
   cursor: pointer;
+}
+
+/* Recommend */
+.ranking {
+  margin: 10px auto;
+  width: 70%;
+}
+
+.rankA {
+  width: 30%;
+}
+
+.rankimg {
+  width: 80%;
+}
+
+.beansimg {
+  width: 80%;
+}
+
+.rankB {
+  width: 70%;
+  text-align: right;
+}
+
+.url {
+  color: #cfdedf;
+  font-size: 0.8rem;
+}
+
+.aboutBeans {
+  color: #cfdedf;
+}
+
+/* Admin */
+
+.allbeansList {
+  margin: 10px auto;
+  width: 70%;
+  color: #cfdedf;
 }

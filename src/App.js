@@ -43,15 +43,13 @@ function App() {
         </header>
         {signin ? <Signin setSignin={setSignin} url={url} /> :
           <>
-            <Choose selectFav={selectFav} setSelectFav={setSelectFav} recommendBeans={recommendBeans} />
-            <footer>
-              <button className="sigininBtn" onClick={() => setSignin(true)}>Administration</button>
-            </footer>
+            <Choose selectFav={selectFav} setSignin={setSignin} setSelectFav={setSelectFav} recommendBeans={recommendBeans} />
           </>
         }
       </AuthProvider>
-
     </>
+
+
   );
 }
 
