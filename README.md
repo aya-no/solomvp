@@ -60,7 +60,7 @@ $ npm run start:api
 # Future features
 
 - [ ] AWS EC2インスタンスへのデプロイ
-- [ ] コーヒー豆の追加・削除
+- [ ] コーヒー豆の追加・削除（編集のみ実装済み/追加と削除のAPIは実装済み）
 - [ ] CSSの修正
 - [ ] ログインエラーcatch
 
