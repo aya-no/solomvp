@@ -22,6 +22,9 @@
     "styled-component": "^2.8.0",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "version_number"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "npm i && npm i react-scripts && react-scripts build",
