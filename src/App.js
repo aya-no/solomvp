@@ -8,8 +8,9 @@ import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
-  // const url = process.env.DATABASE_URL ? "https://solomvp-api.onrender.com" : "http://localhost:8080";
   const url = "https://solomvp-api.onrender.com";
+  // const url = "http://localhost:8080";
+
   const [selectFav, setSelectFav] = useState({
     bitterness: 3,
     acidity: 3,

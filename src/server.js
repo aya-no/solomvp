@@ -6,8 +6,8 @@ const PORT = 8080;
 
 app.use("/", express.static("../public"));
 
+
 app.use((req, res, next) => {
-    // process.env.DATABASE_URL ? res.header("Access-Control-Allow-Origin", "https://solomvp.onrender.com") :
     // res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header("Access-Control-Allow-Origin", "https://solomvp.onrender.com");
     res.header("Access-Control-Allow-Headers", "*");
