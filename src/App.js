@@ -70,12 +70,12 @@ function App() {
             <Choose selectFav={selectFav} setSignin={setSignin} setSelectFav={setSelectFav} recommendBeans={recommendBeans} />
           </>
         }
-        <Tour
-          steps={steps}
-          isOpen={isTourOpen}
-          onRequestClose={() => setIsTourOpen(false)}
-        />
       </AuthProvider>
+      <Tour
+        steps={steps}
+        isOpen={isTourOpen}
+        onRequestClose={() => setIsTourOpen(false)}
+      />
     </>
 
 
